@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.springboot.SpringbootDockerk8.company.Company;
+
 @RestController
 @RequestMapping("/jobs")
 public class JobController {
@@ -33,6 +35,10 @@ public class JobController {
     @PostMapping("/create")
     public ResponseEntity<Job> createJobs(@RequestBody Job job) {
         jobService.createJob(job);
+        Company company = job.getCompany();
+        if (company != null) {
+
+        }
         return new ResponseEntity<>(job, HttpStatus.CREATED);
     }
 

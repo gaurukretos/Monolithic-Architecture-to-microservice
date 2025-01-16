@@ -1,5 +1,6 @@
-package com.springboot.SpringbootDockerk8.job;
+package com.springboot.SpringbootDockerk8.review;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.springboot.SpringbootDockerk8.company.Company;
 
 import jakarta.persistence.Entity;
@@ -7,31 +8,29 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 
 @Entity
-public class Job {
+public class Review {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String title;
+
     private String description;
 
-    private String minSalary;
+    private Double rating;
 
-    private String maxSalary;
-
-    private String location;
-
+    @JsonIgnore
     @ManyToOne
     private Company company;
 
-    public Job() {
+    public Review() {
     }
 
     public Long getId() {
-        return this.id;
+        return id;
     }
 
     public void setId(Long id) {
@@ -39,7 +38,7 @@ public class Job {
     }
 
     public String getTitle() {
-        return this.title;
+        return title;
     }
 
     public void setTitle(String title) {
@@ -47,35 +46,19 @@ public class Job {
     }
 
     public String getDescription() {
-        return this.description;
+        return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
     }
 
-    public String getMinSalary() {
-        return this.minSalary;
+    public Double getRating() {
+        return rating;
     }
 
-    public void setMinSalary(String minSalary) {
-        this.minSalary = minSalary;
-    }
-
-    public String getMaxSalary() {
-        return this.maxSalary;
-    }
-
-    public void setMaxSalary(String maxSalary) {
-        this.maxSalary = maxSalary;
-    }
-
-    public String getLocation() {
-        return this.location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
+    public void setRating(Double rating) {
+        this.rating = rating;
     }
 
     public Company getCompany() {
