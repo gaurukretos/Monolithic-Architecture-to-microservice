@@ -2,7 +2,6 @@ package com.springboot.SpringbootDockerk8;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication(scanBasePackages = "com.springboot.SpringbootDockerk8")
 // @ComponentScan(basePackages = "com.springboot.SpringbootDockerk8.job")
